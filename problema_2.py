@@ -21,7 +21,11 @@ class agenda():
             if (opcion == "n"):
                 break
         return self.contacto
+    def mostrar_registro(self):
         
+        for self.codigo in self.contacto:
+            print(f"codigo {self.codigo} - {self.contacto[self.codigo]}")
+
     def editar_registro(self):
         
         while True:
@@ -41,6 +45,31 @@ class agenda():
 
 def main():
     contacto1 = agenda()
+    while True:
+        print('**--MENÚ--**')
+        print('1. añadir contacto')
+        print('2. lista de contactos')
+        print('3. buscar contacto')
+        print('4. editar contacto')
+        print('5. salir')
+        print('')
+        opcion = input('bienvenidos que desea hacer? ')
+        print('')
+        
+
+        if (opcion == '1'):
+            print('')
+            contacto1.registro()
+        elif (opcion == '2'):
+            print('')
+            contacto1.mostrar_registro()
+        elif opcion == '3':
+            print('')
+            contacto1.editar_registro()
+        elif opcion == '4':
+            print("")
+            break
+            
 
 if __name__ == "__main__":
     main()
